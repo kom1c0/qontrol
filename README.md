@@ -1,42 +1,69 @@
-<<<<<<< HEAD
-# Qontrol — YouTube Quality Controller
+# qontrol — YouTube Quality Controller
 
-> Premium Chrome Extension for persistent YouTube playback quality. Futuristic dark UI, Vazirmatn, EN/FA.
-
-![Version](https://img.shields.io/badge/version-1.6.8-3B82F6) ![Manifest](https://img.shields.io/badge/manifest-V3-111318) ![License](https://img.shields.io/badge/license-MIT-9AA1AE)
+A lightweight Chrome extension that automatically enforces your preferred YouTube video quality and politely respects your manual changes. Set it once — it applies to every video.
 
 ## Features
-- 144p → 4320p (8K) with intelligent fallback
-- Auto-enforce on new video / SPA navigation
-- Manual override respected per-video
-- Persistent via `chrome.storage.local`
-- Premium dark UI (360×480), glass, Vazirmatn
-- i18n: English / فارسی (RTL) with in-popup switch
 
-## Install (Unpacked)
-1. `chrome://extensions` → Developer mode ON
-2. Load unpacked → select this folder
-3. Refresh YouTube tabs
+- Automatic quality enforcement on every video (default: 1080p)
+- Smart fallback — best available quality **at or below** your preference; never upscales
+- Detects manual quality changes and pauses automation; one-click **Reset Manual Override**
+- Live status in the popup: Active / Standby / Manual override
+- Works on regular videos, Shorts, embedded players, and live streams; handles YouTube's SPA navigation
+- Bilingual UI — English and فارسی with full RTL support; auto-detects browser language
+- No data collection — everything is stored locally (`chrome.storage.local`)
+
+**Supported qualities:** 144p – 4320p (8K)
+
+## Installation
+
+1. Clone this repository (or download the source)
+2. Open `chrome://extensions` and enable **Developer mode**
+3. Click **Load unpacked** and select the `qontrol` folder
+4. Pin the icon and set your preferred quality
 
 ## Usage
-Popup → Preferred Quality → Auto-applies. Manual change in YouTube player overrides for current video. Use `Reset Manual Override` to re-enable.
 
-## Structure
-```
-manifest.json
-background/service-worker.js
-content/youtube.js (isolated) + injected.js (page world, player API)
-popup/{popup.html,popup.css,popup.js}
-_locales/{en,fa}/messages.json
-icons/icon.svg + icon16/32/48/128.png
-```
+- Pick your preferred quality in the popup — it is saved instantly and enforced on the current and all future videos
+- Manually change quality in YouTube's settings → qontrol switches to **Manual override** and stops interfering
+- Click **Reset Manual Override** to resume automation
 
-## Tech
-Manifest V3, `getAvailableQualityLevels` / `setPlaybackQualityRange`, `postMessage` bridge, History API + MutationObserver for SPA, `chrome.storage`.
+## Architecture
 
-## License
-MIT
-=======
-# qontrol
-Chrome extention for set youtube quality
->>>>>>> 24a7c72dc86385c6096cfce3dcbf1e762345c3fa
+Three-tier Manifest V3 design with a page-context bridge to reach YouTube's player:
+
+| Layer | File | Role |
+|---|---|---|
+| Popup | `popup/` | UI — reads/writes preference and language, polls active tab for live status |
+| Service worker | `background/service-worker.js` | MV3 worker — storage defaults, message relay |
+| Content script | `content/youtube.js` | Isolated world — watches SPA navigation, injects page script, bridges messages |
+| Page script | `content/injected.js` | Page context — accesses the YouTube player API (`getAvailableQualityLevels`, `setPlaybackQualityRange`…), applies quality, detects manual changes, resets per video |
+
+Cross-world messaging uses `window.postMessage` + `CustomEvent`; extension-to-extension uses `chrome.runtime` / `chrome.tabs` messaging.
+
+## Tech Stack
+
+- **Chrome Extension — Manifest V3** (service worker, no persistent background page)
+- **Vanilla JavaScript (ES2020+)** — no frameworks, no build step
+- **Chrome APIs** — `runtime`, `storage.local`, `tabs`, `scripting`, `i18n`
+- **YouTube player API** — resolved across main page, `#movie_player`, and embedded iframes
+- **SPA handling** — `MutationObserver`, `pushState/replaceState` hooks, `popstate`, `visibilitychange`
+- **UI** — HTML5 + CSS3, custom popover selector (no libraries), dark theme
+- **Typography** — Vazirmatn (self-hosted woff2)
+- **i18n** — `chrome.i18n` + `_locales/{en,fa}`, runtime language switching with RTL
+
+## Permissions
+
+| Permission | Why |
+|---|---|
+| `storage` | Persist preferred quality and language locally |
+| `tabs` | Live status of the active tab in the popup |
+| `scripting` | MV3 content-script control |
+| `https://*.youtube.com/*` | Inject only on YouTube pages |
+
+## Browser Support
+
+Chrome and Chromium-based browsers (Edge, Brave, Opera, Vivaldi) — version 88+. Firefox is not supported.
+
+## Localization
+
+Ships with **English** and **Persian**. Browser language is auto-detected and can be changed from the popup. To add a language, create `_locales/<code>/messages.json` mirroring the English keys.
