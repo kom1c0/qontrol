@@ -1,0 +1,102 @@
+{
+  "extensionName": {
+    "message": "YouTube Quality Control",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "Automatically sets your preferred YouTube video playback quality and respects manual changes",
+    "description": "Extension description"
+  },
+  "popupTitle": {
+    "message": "YouTube Quality",
+    "description": "Popup title"
+  },
+  "preferredQualityLabel": {
+    "message": "Preferred Quality",
+    "description": "Label for quality dropdown"
+  },
+  "languageLabel": {
+    "message": "Language",
+    "description": "Label for language dropdown"
+  },
+  "statusActive": {
+    "message": "Active - Quality control enabled",
+    "description": "Status text when active"
+  },
+  "statusInactive": {
+    "message": "Inactive - Not on YouTube video page",
+    "description": "Status text when inactive"
+  },
+  "statusManualOverride": {
+    "message": "Manual override active",
+    "description": "Status text when user manually changed quality"
+  },
+  "currentQualityLabel": {
+    "message": "Current: $QUALITY$",
+    "description": "Current quality display",
+    "placeholders": {
+      "quality": {
+        "content": "$1",
+        "example": "1080p"
+      }
+    }
+  },
+  "preferredQualityDisplay": {
+    "message": "Preferred: $QUALITY$",
+    "description": "Preferred quality display",
+    "placeholders": {
+      "quality": {
+        "content": "$1",
+        "example": "1080p"
+      }
+    }
+  },
+  "resetOverrideButton": {
+    "message": "Reset Manual Override",
+    "description": "Button to reset manual quality override"
+  },
+  "resetOverrideSent": {
+    "message": "Reset Sent",
+    "description": "Button text after sending reset"
+  },
+  "infoText": {
+    "message": "Quality is applied automatically to YouTube videos. Manual quality changes from YouTube's player will override this preference for the current video.",
+    "description": "Info text in popup"
+  },
+  "quality144p": {
+    "message": "144p",
+    "description": "Quality option"
+  },
+  "quality240p": {
+    "message": "240p",
+    "description": "Quality option"
+  },
+  "quality360p": {
+    "message": "360p",
+    "description": "Quality option"
+  },
+  "quality480p": {
+    "message": "480p",
+    "description": "Quality option"
+  },
+  "quality720p": {
+    "message": "720p",
+    "description": "Quality option"
+  },
+  "quality1080p": {
+    "message": "1080p",
+    "description": "Quality option"
+  },
+  "quality1440p": {
+    "message": "1440p (2K)",
+    "description": "Quality option"
+  },
+  "quality2160p": {
+    "message": "2160p (4K)",
+    "description": "Quality option"
+  },
+  "quality4320p": {
+    "message": "4320p (8K)",
+    "description": "Quality option"
+  }
+}

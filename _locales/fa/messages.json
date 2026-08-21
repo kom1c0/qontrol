@@ -1,0 +1,102 @@
+{
+  "extensionName": {
+    "message": "کنترل کیفیت یوتیوب",
+    "description": "نام افزونه"
+  },
+  "extensionDescription": {
+    "message": "به‌صورت خودکار کیفیت پخش ویدیوهای یوتیوب را روی ترجیح شما تنظیم می‌کند و تغییرات دستی را محترم می‌شمارد",
+    "description": "توضیحات افزونه"
+  },
+  "popupTitle": {
+    "message": "کیفیت یوتیوب",
+    "description": "عنوان پاپ‌آپ"
+  },
+  "preferredQualityLabel": {
+    "message": "کیفیت ترجیحی",
+    "description": "برچسب منوی کیفیت"
+  },
+  "languageLabel": {
+    "message": "زبان",
+    "description": "برچسب منوی زبان"
+  },
+  "statusActive": {
+    "message": "فعال - کنترل کیفیت روشن است",
+    "description": "متن وضعیت وقتی فعال است"
+  },
+  "statusInactive": {
+    "message": "غیرفعال - در صفحه ویدیو یوتیوب نیستید",
+    "description": "متن وضعیت وقتی غیرفعال است"
+  },
+  "statusManualOverride": {
+    "message": "بازنویسی دستی فعال است",
+    "description": "متن وضعیت وقتی کاربر به‌صورت دستی کیفیت را تغییر داده"
+  },
+  "currentQualityLabel": {
+    "message": "کیفیت فعلی: $QUALITY$",
+    "description": "نمایش کیفیت فعلی",
+    "placeholders": {
+      "quality": {
+        "content": "$1",
+        "example": "1080p"
+      }
+    }
+  },
+  "preferredQualityDisplay": {
+    "message": "کیفیت ترجیحی: $QUALITY$",
+    "description": "نمایش کیفیت ترجیحی",
+    "placeholders": {
+      "quality": {
+        "content": "$1",
+        "example": "1080p"
+      }
+    }
+  },
+  "resetOverrideButton": {
+    "message": "بازنشانی بازنویسی دستی",
+    "description": "دکمه بازنشانی بازنویسی دستی کیفیت"
+  },
+  "resetOverrideSent": {
+    "message": "بازنشانی ارسال شد",
+    "description": "متن دکمه بعد از ارسال بازنشانی"
+  },
+  "infoText": {
+    "message": "کیفیت ویدیوهای یوتیوب به‌صورت خودکار بر اساس ترجیح شما تنظیم می‌شود. اگر در پخش‌کننده یوتیوب به‌صورت دستی کیفیت را تغییر دهید، این انتخاب برای ویدیوی جاری اولویت دارد و ترجیح خودکار غیرفعال می‌شود.",
+    "description": "متن راهنما در پاپ‌آپ"
+  },
+  "quality144p": {
+    "message": "144p",
+    "description": "گزینه کیفیت"
+  },
+  "quality240p": {
+    "message": "240p",
+    "description": "گزینه کیفیت"
+  },
+  "quality360p": {
+    "message": "360p",
+    "description": "گزینه کیفیت"
+  },
+  "quality480p": {
+    "message": "480p",
+    "description": "گزینه کیفیت"
+  },
+  "quality720p": {
+    "message": "720p",
+    "description": "گزینه کیفیت"
+  },
+  "quality1080p": {
+    "message": "1080p",
+    "description": "گزینه کیفیت"
+  },
+  "quality1440p": {
+    "message": "1440p (۲K)",
+    "description": "گزینه کیفیت"
+  },
+  "quality2160p": {
+    "message": "2160p (۴K)",
+    "description": "گزینه کیفیت"
+  },
+  "quality4320p": {
+    "message": "4320p (۸K)",
+    "description": "گزینه کیفیت"
+  }
+}
