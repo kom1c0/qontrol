@@ -2,6 +2,8 @@
 
 A lightweight Chrome extension that automatically enforces your preferred YouTube video quality and politely respects your manual changes. Set it once — it applies to every video.
 
+**Language:** [English](README.md) | [فارسی](README.fa.md)
+
 ## Features
 
 - Automatic quality enforcement on every video (default: 1080p)
