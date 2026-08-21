@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Qontrol — YouTube Quality Controller
 
 > Premium Chrome Extension for persistent YouTube playback quality. Futuristic dark UI, Vazirmatn, EN/FA.
@@ -35,3 +36,7 @@ Manifest V3, `getAvailableQualityLevels` / `setPlaybackQualityRange`, `postMessa
 
 ## License
 MIT
+=======
+# qontrol
+Chrome extention for set youtube quality
+>>>>>>> 24a7c72dc86385c6096cfce3dcbf1e762345c3fa
