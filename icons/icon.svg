@@ -1,32 +1,44 @@
-<svg width="128" height="128" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-<defs>
-  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#151820"/>
-    <stop offset="100%" stop-color="#0A0B0F"/>
-  </linearGradient>
-  <radialGradient id="glow" cx="0.5" cy="0" r="1" gradientUnits="objectBoundingBox">
-    <stop offset="0%" stop-color="rgba(59,130,246,0.18)"/>
-    <stop offset="65%" stop-color="rgba(59,130,246,0)"/>
-  </radialGradient>
-  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-    <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="rgba(0,0,0,0.45)" flood-opacity="1"/>
-  </filter>
-</defs>
-<!-- Base with gradient and shadow -->
-<rect width="32" height="32" rx="7.5" fill="url(#bg)"/>
-<rect width="32" height="32" rx="7.5" fill="url(#glow)"/>
-<rect x="0.5" y="0.5" width="31" height="31" rx="7" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="0.6"/>
-<rect x="0.5" y="0.5" width="31" height="31" rx="7" fill="none" stroke="rgba(59,130,246,0.10)" stroke-width="0.6"/>
-<!-- Q shape - premium geometric -->
-<g filter="url(#shadow)">
-  <!-- Outer Q circle -->
-  <circle cx="15.8" cy="14.2" r="7.1" stroke="rgba(255,255,255,0.96)" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- Q tail - integrated diagonal with rounded end -->
-  <path d="M19.9 18.4 L23.1 21.8" stroke="rgba(255,255,255,0.96)" stroke-width="1.8" stroke-linecap="round"/>
-  <!-- Play triangle inside Q - precise centering -->
-  <path d="M13.6 10.6 L19.2 14.2 L13.6 17.8 Z" fill="rgba(255,255,255,0.96)" stroke="rgba(255,255,255,0.96)" stroke-width="0.4" stroke-linejoin="round"/>
-</g>
-<!-- Accent dot - top right hint of quality/active -->
-<circle cx="24.2" cy="7.8" r="1.6" fill="#3B82F6" stroke="rgba(255,255,255,0.9)" stroke-width="0.4"/>
-<circle cx="24.2" cy="7.8" r="3.2" fill="rgba(59,130,246,0.18)" opacity="0.6"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" fill="none">
+  <defs>
+    <linearGradient id="background" x1="10" y1="6" x2="118" y2="124" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1B1B43"/>
+      <stop offset=".52" stop-color="#111235"/>
+      <stop offset="1" stop-color="#060716"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="20" y1="12" x2="112" y2="119" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B6A7FF"/>
+      <stop offset=".48" stop-color="#5C63F2"/>
+      <stop offset="1" stop-color="#3730C6"/>
+    </linearGradient>
+    <linearGradient id="dial" x1="38" y1="31" x2="87" y2="96" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D7DAEC"/>
+      <stop offset=".28" stop-color="#858AA6"/>
+      <stop offset="1" stop-color="#3C405C"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(64 64) rotate(90) scale(49)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F46E5" stop-opacity=".52"/>
+      <stop offset="1" stop-color="#4F46E5" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softGlow" x="19" y="18" width="90" height="94" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+    <filter id="shadow" x="22" y="23" width="86" height="90" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#02020B" flood-opacity=".8"/>
+    </filter>
+  </defs>
+  <rect x="3" y="3" width="122" height="122" rx="31" fill="url(#background)"/>
+  <rect x="4.5" y="4.5" width="119" height="119" rx="29.5" stroke="url(#rim)" stroke-width="3"/>
+  <circle cx="64" cy="65" r="47" fill="#4946F4" fill-opacity=".42" filter="url(#softGlow)"/>
+  <circle cx="64" cy="65" r="45" fill="url(#glow)"/>
+  <g filter="url(#shadow)">
+    <circle cx="64" cy="65" r="32.5" fill="#12142F" stroke="url(#dial)" stroke-width="7"/>
+    <g stroke="#0A0B20" stroke-width="3.5" stroke-linecap="round">
+      <path d="M64 33v7"/><path d="M80 37l-3.5 6"/><path d="M92 49l-6 3.5"/><path d="M96 65h-7"/>
+      <path d="M92 81l-6-3.5"/><path d="M80 93l-3.5-6"/><path d="M64 97v-7"/><path d="M48 93l3.5-6"/>
+      <path d="M36 81l6-3.5"/><path d="M32 65h7"/><path d="M36 49l6 3.5"/><path d="M48 37l3.5 6"/>
+    </g>
+    <path d="M53.5 46.5 82 65 53.5 83.5V46.5Z" fill="white"/>
+  </g>
+  <path d="m88.5 34.5 3.2 7.8 7.8 3.2-7.8 3.2-3.2 7.8-3.2-7.8-7.8-3.2 7.8-3.2 3.2-7.8Z" fill="#7294FF" stroke="#15163D" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="m88.5 38.8 1.4 3.4 3.4 1.4-3.4 1.4-1.4 3.4-1.4-3.4-3.4-1.4 3.4-1.4 1.4-3.4Z" fill="#C5D4FF" fill-opacity=".75"/>
 </svg>
